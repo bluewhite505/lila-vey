@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leave a Review — Lila Vey</title>
+<meta name="description" content="Leave a spoiler-free review for The Possession Line by Lila Vey.">
+<style>
+:root{--paper:#f2e7d2;--ink:#1c1716;--muted:#6e625c;--ox:#8f1720;--rule:#c7b49a;--cream:#fffaf0}
+*{box-sizing:border-box}body{margin:0;background:#161111;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+.paper{min-height:100vh;background:linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.05)),repeating-linear-gradient(0deg,rgba(70,45,25,.025) 0,rgba(70,45,25,.025) 1px,transparent 1px,transparent 4px),var(--paper)}
+.wrap{width:min(860px,calc(100% - 34px));margin:auto;padding:48px 0 72px}.brand{font:700 13px/1 Arial,sans-serif;letter-spacing:4px;text-transform:uppercase}.brand small{display:block;font-size:9px;letter-spacing:2px;margin-top:7px;color:var(--muted)}
+.back{display:inline-block;margin:28px 0 34px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);font:700 11px Arial,sans-serif;letter-spacing:1.4px;text-transform:uppercase}
+.card{background:rgba(255,250,240,.58);border:1px solid var(--rule);padding:clamp(24px,5vw,52px);box-shadow:0 18px 55px rgba(37,21,16,.12)}
+.eyebrow{color:var(--ox);font:700 11px Arial,sans-serif;letter-spacing:2.8px;text-transform:uppercase}h1{font-size:clamp(42px,8vw,76px);line-height:.98;margin:14px 0 18px;font-weight:500}p.lede{font-size:19px;line-height:1.65;color:#443936;max-width:650px}
+label{display:block;font:700 11px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;margin:28px 0 9px}input,select,textarea{width:100%;border:1px solid #a9957d;background:rgba(255,255,255,.56);padding:14px 15px;font:16px Georgia,serif;color:var(--ink);outline:none}textarea{min-height:180px;resize:vertical;line-height:1.55}input:focus,select:focus,textarea:focus{border-color:var(--ox);box-shadow:0 0 0 2px rgba(143,23,32,.08)}
+.stars{display:flex;gap:8px;flex-wrap:wrap}.stars input{position:absolute;opacity:0;pointer-events:none}.stars label{margin:0;cursor:pointer;border:1px solid #a9957d;background:#fff8ea;padding:10px 13px;font-size:18px;letter-spacing:0;text-transform:none}.stars input:checked+label{background:var(--ox);border-color:var(--ox);color:#fff}
+.consent{display:flex;gap:11px;align-items:flex-start;margin-top:24px;padding:16px;border:1px solid var(--rule);background:rgba(255,255,255,.35)}.consent input{width:auto;margin-top:4px}.consent label{margin:0;font:14px/1.55 Arial,sans-serif;letter-spacing:0;text-transform:none;font-weight:400}.fine{color:var(--muted);font:12px/1.55 Arial,sans-serif;margin-top:7px}
+button{margin-top:28px;border:0;background:var(--ox);color:white;padding:16px 24px;font:700 12px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer}button[disabled]{opacity:.5;cursor:wait}.msg{display:none;margin-top:22px;padding:15px;border:1px solid var(--rule);font:14px/1.55 Arial,sans-serif}.msg.ok{display:block;background:#edf1e8;color:#26351f}.msg.err{display:block;background:#fae9e5;color:#72151c;border-color:#c78d8d}
+.note{margin-top:30px;color:var(--muted);font:13px/1.6 Arial,sans-serif;border-top:1px solid var(--rule);padding-top:20px}
+</style>
+</head>
+<body><div class="paper"><main class="wrap">
+<div class="brand">LILA VEY<small>THE POSSESSION LINE</small></div>
+<a class="back" href="./">← Back to the books</a>
+<section class="card">
+<div class="eyebrow">Reader file · private until approved</div>
+<h1>Tell me what stayed with you.</h1>
+<p class="lede">Your review is sent privately first. Nothing appears on the Lila Vey website unless you give permission and I approve it.</p>
+<form id="reviewForm">
+<label for="displayName">Name or pen name</label>
+<input id="displayName" name="displayName" maxlength="60" required placeholder="What should I call you?">
+
+<label for="couple">Which story stayed with you?</label>
+<select id="couple" name="couple" required>
+<option value="">Choose one</option>
+<option>Mara + Elias</option>
+<option>Claire + Owen</option>
+<option>Wren + Adrian</option>
+<option>The trilogy as a whole</option>
+</select>
+
+<label>Rating</label>
+<div class="stars" aria-label="Rating from 1 to 5">
+<input type="radio" name="rating" id="r1" value="1" required><label for="r1">1 ★</label>
+<input type="radio" name="rating" id="r2" value="2"><label for="r2">2 ★</label>
+<input type="radio" name="rating" id="r3" value="3"><label for="r3">3 ★</label>
+<input type="radio" name="rating" id="r4" value="4"><label for="r4">4 ★</label>
+<input type="radio" name="rating" id="r5" value="5"><label for="r5">5 ★</label>
+</div>
+
+<label for="review">Your spoiler-free review</label>
+<textarea id="review" name="review" minlength="20" maxlength="2000" required placeholder="One sentence is enough. Tell me what you felt, what unsettled you, or who you couldn't stop thinking about."></textarea>
+
+<div class="consent">
+<input type="checkbox" id="publishConsent" name="publishConsent">
+<label for="publishConsent">You may publish this review on the Lila Vey website using the name or pen name above.</label>
+</div>
+<div class="fine">If you leave this unchecked, your response stays private and cannot be approved for public display.</div>
+
+<button id="submitBtn" type="submit">File my review</button>
+<div id="msg" class="msg" role="status" aria-live="polite"></div>
+</form>
+<div class="note">Reviews are manually moderated. Submitting a review does not guarantee publication.</div>
+</section>
+</main></div>
+<script>
+const WORKER="https://lila-vey-store.kmirtchmue.workers.dev";
+const form=document.getElementById('reviewForm'),msg=document.getElementById('msg'),btn=document.getElementById('submitBtn');
+form.addEventListener('submit',async(e)=>{
+ e.preventDefault(); msg.className='msg'; msg.textContent=''; btn.disabled=true;
+ const fd=new FormData(form);
+ const payload={displayName:fd.get('displayName'),couple:fd.get('couple'),rating:Number(fd.get('rating')),review:fd.get('review'),publishConsent:fd.get('publishConsent')==='on'};
+ try{
+  const r=await fetch(WORKER+'/reviews',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok) throw new Error(d.error||'Your review could not be filed.');
+  msg.textContent='Thank you. Your confession has been filed.'; msg.className='msg ok'; form.reset();
+ }catch(err){msg.textContent=err.message+' Please try again.';msg.className='msg err'}
+ finally{btn.disabled=false}
+});
+</script>
+</body></html>
