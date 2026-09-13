@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reader Reviews — Lila Vey</title>
+<meta name="description" content="Approved reader reviews for The Possession Line by Lila Vey.">
+<style>
+:root{--paper:#f2e7d2;--ink:#1c1716;--muted:#746761;--ox:#8f1720;--rule:#c7b49a}
+*{box-sizing:border-box}body{margin:0;background:#151010;color:var(--ink);font-family:Georgia,'Times New Roman',serif}.paper{min-height:100vh;background:repeating-linear-gradient(0deg,rgba(50,30,20,.025) 0,rgba(50,30,20,.025) 1px,transparent 1px,transparent 4px),var(--paper)}.wrap{width:min(1050px,calc(100% - 34px));margin:auto;padding:48px 0 80px}.brand{font:700 13px Arial,sans-serif;letter-spacing:4px}.brand small{display:block;font-size:9px;letter-spacing:2px;margin-top:7px;color:var(--muted)}.nav{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.nav a{color:var(--ink);font:700 11px Arial,sans-serif;letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--ink)}header{padding:65px 0 35px;border-bottom:1px solid var(--rule)}.eyebrow{color:var(--ox);font:700 11px Arial,sans-serif;letter-spacing:2.8px;text-transform:uppercase}h1{font-size:clamp(46px,8vw,84px);line-height:.95;font-weight:500;margin:12px 0 18px}.lede{color:#4f423e;font-size:18px;line-height:1.6;max-width:700px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:32px 0}.review{border:1px solid var(--rule);background:rgba(255,250,240,.5);padding:28px}.stars{color:var(--ox);letter-spacing:2px;font-size:16px}.quote{font-size:21px;line-height:1.5;margin:16px 0 24px;white-space:pre-wrap}.meta{font:11px/1.5 Arial,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}.empty,.error{padding:34px;border:1px solid var(--rule);margin-top:30px;font-size:20px}.cta{display:inline-block;margin-top:24px;background:var(--ox);color:#fff;text-decoration:none;padding:14px 19px;font:700 11px Arial,sans-serif;letter-spacing:1.3px;text-transform:uppercase}@media(max-width:720px){.grid{grid-template-columns:1fr}.nav{display:block}.nav a{display:inline-block;margin-top:18px}}
+</style>
+</head>
+<body><div class="paper"><main class="wrap">
+<div class="nav"><div class="brand">LILA VEY<small>THE POSSESSION LINE</small></div><a href="./">Back to the books</a></div>
+<header><div class="eyebrow">Approved reader files</div><h1>What they couldn't stop thinking about.</h1><p class="lede">Only reviews manually approved for publication appear here.</p><a class="cta" href="review.html">Leave your review</a></header>
+<div id="grid" class="grid" aria-live="polite"></div>
+</main></div>
+<script>
+const WORKER="https://lila-vey-store.kmirtchmue.workers.dev",grid=document.getElementById('grid');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+(async()=>{try{const r=await fetch(WORKER+'/reviews/public',{headers:{Accept:'application/json'}});const d=await r.json();if(!r.ok)throw new Error(d.error||'Could not load reviews.');if(!d.reviews?.length){grid.className='empty';grid.textContent='The archive is still quiet. Be the first reader to leave a review.';return}grid.innerHTML=d.reviews.map(x=>`<article class="review"><div class="stars">${'★'.repeat(x.rating)}${'☆'.repeat(5-x.rating)}</div><div class="quote">“${esc(x.review)}”</div><div class="meta">${esc(x.displayName)} · ${esc(x.couple)}</div></article>`).join('')}catch(e){grid.className='error';grid.textContent=e.message}})();
+</script>
+</body></html>
